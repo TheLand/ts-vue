@@ -1,0 +1,140 @@
+{
+	"Vue TS SFC": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue sfc",
+		"body": [
+			"<template src=\"./$1.html\" />",
+			"<script src=\"./$1.ts\" lang=\"ts\"></script>",
+			"<style src=\"./$1.scss\" scoped lang=\"scss\"></style>"
+		],
+		"description": "Create default index.vue"
+	},
+	"Vue TS Import": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue import",
+		"body": [
+			"import { Vue, Component, Prop } from 'vue-property-decorator'"
+		],
+		"description": "Add basic import statement"
+	},
+	"Vue TS Component": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue c",
+		"body": [
+			"import { Vue, Component, Prop } from 'vue-property-decorator'",
+			"",
+			"@Component",
+			"export default class $1 extends Vue {",
+			"\t$0",
+			"}"
+		],
+		"description": "Add basic component"
+	},
+	"Vue TS import lazy component": {
+		"scope": "vue,typescript,javascript",
+		"prefix": "ts-vue import c lazy",
+		"body": [
+			"const ${1:ComponentName} = async () => {",
+			"\treturn await import('../$2/index.vue' /* webpackChunkName: \"$2\" */)",
+			"}"
+		],
+		"description": "Add import lazy component"
+	},
+	"Vue TS Prop": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop",
+		"body": [
+			"@Prop({ type: ${1:String}, required: ${2:false}, default: ${3:''} })",
+			"${4:value}: ${5:string}"
+		],
+		"description": "Create Vue Typescript Prop"
+	},
+	"Vue TS Prop VModel": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop v-model",
+		"body": [
+			"@Prop({ type: ${1:String}, required: ${2:false}, default: ${3:''} })",
+			"${4:value}: ${5:string}",
+			"",
+			"@Watch('value', { immediate: true })",
+			"onValueChange (val: ${5:string}, oldVal: ${5:string}) {",
+			"\tif(val !== oldVal) {",
+			"\t\tthis.localValue = val",
+			"\t}",
+			"}",
+			"",
+			"localValue: ${5:string} = ${3:''}"
+		],
+		"description": "Create Vue Typescript Prop"
+	},
+	"Vue TS Prop Number": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop number",
+		"body": [
+			"@Prop({ type: Number, required: false, default: ${1:0} })",
+			"${2:value}: number"
+		],
+		"description": "Create Vue Typescript Prop Number"
+	},
+	"Vue TS Prop String": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop string",
+		"body": [
+			"@Prop({ type: String, required: false, default: ${1:''} })",
+			"${2:value}: string"
+		],
+		"description": "Create Vue Typescript Prop String"
+	},
+	"Vue TS Prop Boolean": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop boolean",
+		"body": [
+			"@Prop({ type: Boolean, required: false, default: ${1:false} })",
+			"${2:value}: boolean"
+		],
+		"description": "Create Vue Typescript Prop Boolean"
+	},
+	"Vue TS Prop Array": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue prop array",
+		"body": [
+			"@Prop({ type: Array, required: false, default: ${1:() => []} })",
+			"${2:value}: []"
+		],
+		"description": "Create Vue Typescript Prop Array"
+	},
+	"Vue TS Watch": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue watch",
+		"body": [
+			"@Watch('${1:variable}', { immediate: true })",
+			"on${1/(.*)/${1:/capitalize}/}Change (val: ${2:string}, oldVal: ${2:string}) {",
+			"\tif(val !== oldVal) {",
+			"\t\t$0",
+			"\t}",
+			"}"
+		],
+		"description": "Create Vue Typescript watcher"
+	},
+	"Vue TS Ref": {
+		"scope": "vue,typescript",
+		"prefix": "ts-vue ref",
+		"body": [
+			"@Ref()",
+			"readonly ${1:ref}!: ${2:HTMLComponent}",
+		],
+		"description": "Create Vue Typescript Ref"
+	},
+	"Vue TS I18n": {
+		"scope": "vue",
+		"prefix": "ts-vue i18n",
+		"body": [
+			"<i18n>",
+			"{",
+			"\t$0",
+			"}",
+			"</i18n>",
+		],
+		"description": "Create Vue Typescript i18n tag"
+	}
+}

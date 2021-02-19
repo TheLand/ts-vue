@@ -1,0 +1,20 @@
+{
+    "name": "ts-vue",
+    "displayName": "ts-vue",
+    "description": "Add Typescript Vue Snippets",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.53.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "typescript,vue",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
